@@ -1,0 +1,101 @@
+
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th> Variable </th>
+          <th >Pipe</th>
+          <th >Producto</th>
+          <th >Descripcion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> {{ nombre }} </td>
+          <td> uppercase </td>
+          <td> {{ nombre | uppercase }} </td>
+          <td> Transforma un string a MAYUSCULAS </td>
+        </tr>
+
+        <tr>
+            <td> {{ nombre }} </td>
+            <td> lowercase </td>
+            <td> {{ nombre | lowercase }} </td>
+            <td> Transforma un string a minusculas </td>
+        </tr>
+
+        <tr>
+            <td> {{ nombre }} </td>
+            <td> slice </td>
+            <td> {{ nombre | slice:0:3 }} </td>
+            <td> Corta el numero de caracteres que especifiquemos de un String, arreglo, etc </td>
+        </tr>
+
+        
+        <tr>
+            <td> {{ PI }} </td>
+            <td> number </td>
+            <td> {{ PI | number:'2.0-2' }} </td>
+            <td> Muestra solo los numeros especificados </td>
+        </tr>
+
+        <tr>
+            <td> {{ salario }} </td>
+            <td> percent </td>
+            <td> {{ salario | currency:'MXN':true }} </td>
+            <td> Transforma un numero a moneda </td>
+        </tr>
+
+        <tr>
+            <td> {{ valorDePromesa }} </td>
+            <td> async </td>
+            <td> {{ valorDePromesa | async }} </td>
+            <td>  </td>
+        </tr>
+
+        <tr>
+            <td> {{ fecha }} </td>
+            <td> date </td>
+            <td> {{ fecha | date:'MMMM - dd' }} </td>
+            <td>  </td>
+        </tr>
+
+        <tr>
+            <td> {{ nombre2 }} </td>
+            <td> capitalizado </td>
+            <td> {{ nombre2 | capitalizado:false }} </td>
+            <td>  </td>
+        </tr>
+
+        <tr>
+            <td> {{ nombre }} </td>
+            <td> contrasena 
+              <br>
+              <button
+                  (click)="activar = !activar"
+                  type="button"
+                  class="btn btn-outline-primary">Activar/desactivar</button>
+            </td>
+            <td> {{ nombre | contrasena }} </td>
+            <td>  </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+    <h4>JSON</h4>
+    <pre> 
+        {{ heroe | json}}
+    </pre>
+    
+    <h4>Youtube <small>video</small></h4>
+    <hr>
+    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <br><br><br><br>
+</div>
